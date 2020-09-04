@@ -1,16 +1,27 @@
 const resultado = document.querySelector('.resultado');
 const checkbox = document.querySelector('.checkbox');
 const multiplicadorCampo= document.querySelector('.multiplicador');
-let multiplicador=1;
+const inputSoma = document.querySelector('[data-soma]')
 
 const multiplicadorLigado = ()=>{
+    let multiplicador =1;
     if (checkbox.checked){
-        const multiplicador = multiplicadorCampo.value;
-        return multiplicador;
-    }else {
-        multiplicador =1;
+         multiplicador = multiplicadorCampo.value;
+        
     }
+    return multiplicador;
 }
+
+multiplicadorCampo.addEventListener('input', ()=>{
+    if (checkbox.checked){
+        resultado.innerHTML  = realizarSoma(inputSoma);      
+   }
+});
+
+checkbox.addEventListener('click', ()=>{
+    resultado.innerHTML  = realizarSoma(inputSoma);
+   
+});
 
 
 export const realizarSoma = input => {
@@ -25,15 +36,13 @@ export const realizarSoma = input => {
         valorArray.pop();
     }
 
-    (multiplicadorLigado() == undefined) ? multiplicador == 1 : multiplicador = multiplicadorLigado();
+    const multiplicador = multiplicadorLigado();
 
     const calcularSoma = () => (total, numeroAtual) => total + numeroAtual;
     
     const soma = valorArray.reduce(calcularSoma(),0);
     
-    if(valorArray.length==1 && isNaN( valorArray[0])){
-        resultado.innerHTML = 0;
-    }
-
     resultado.innerHTML = multiplicador*soma;
+
+    return multiplicador*soma;
 }
