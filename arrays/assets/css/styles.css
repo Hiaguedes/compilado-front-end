@@ -1,0 +1,11 @@
+body{
+    line-height: 2rem;
+}
+
+input {
+    width: 50%;
+}
+
+.main {
+    margin: 2rem 5rem;
+}
