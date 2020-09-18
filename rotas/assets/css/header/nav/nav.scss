@@ -1,0 +1,37 @@
+.header__nav{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background-color: rgb(221, 221, 221);
+}
+
+.nav__container{
+    
+    display: flex;
+    margin: 0 15rem;
+    justify-content: space-between;
+    width: calc(100% - 2*15rem);
+
+}
+
+.nav__item {
+    width: 25%;
+    list-style: none;
+    text-align: center;
+    padding: 1rem 0;
+    border: 1px solid;
+    cursor: pointer;
+    background-color: rgb(255,255,255);
+    transition: background-color ease-in-out 0.2s;
+}
+
+.nav__item:hover {
+    color: white;
+    background-color: rgb(49, 49, 49);
+    transition: background-color ease-in-out 0.2s;
+    border: white;
+}
+
+.nav__item:nth-child(1),.nav__item:nth-child(2),.nav__item:nth-child(3){
+    border-right: none;
+}

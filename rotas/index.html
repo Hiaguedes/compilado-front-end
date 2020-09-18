@@ -7,17 +7,18 @@
     </head>
     <body>
         <header class="header">
-            <div class="header__title">
-                Aplicação de Rotas
-            </div>
+            <div class="header__title">Aplicação de Rotas</div>
             <nav class="header__nav">
             <div class="nav__container">
-                <li class="nav__item">Menu 1</li>
-                <li class="nav__item">Menu 2</li>
-                <li class="nav__item">Menu 3</li>
-                <li class="nav__item">Menu 4</li>
+                <li class="nav__item" data-menu onclick="navegarPara('/menu1'); return false;">Menu 1</li>
+                <li class="nav__item" data-menu onclick="navegarPara('/menu2'); return false;">Menu 2</li>
+                <li class="nav__item" data-menu onclick="navegarPara('/menu3'); return false;">Menu 3</li>
+                <li class="nav__item" data-menu onclick="navegarPara('/menu4'); return false;">Menu 4</li>
             </div>
             </nav>
         </header>
+        <main class="main" data-main>
+            <p>Texto escrito na raiz</p>
+        </main>
     </body>
 </html>
