@@ -1,0 +1,10 @@
+body {
+    display: grid;
+    grid-template-areas: "header" "main";
+    grid-template-rows: 130px auto;
+}
+
+.header {
+    grid-area: header;
+    position: relative;
+}
