@@ -2,12 +2,13 @@ import { ButtonBase } from './button.styles';
 
 interface ButtonProps {
     text: string;
+    onPress: any;
 }
 
 
-const Button = ({text}: ButtonProps) => {
+const Button = ({text, onPress}: ButtonProps) => {
     return (
-        <ButtonBase>
+        <ButtonBase onClick={onPress}>
             {text}
         </ButtonBase>
     );

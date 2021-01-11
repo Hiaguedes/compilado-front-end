@@ -5,15 +5,18 @@ import Button from '../Button'
 interface InputProps {
     placeholder: string;
     addButton: boolean;
+    onChange: any;
+    value: string;
+    onButtonPress: any;
 }
 
-const Input = ({placeholder}: InputProps) => {
+const Input = ({placeholder, onChange, value, onButtonPress}: InputProps) => {
     return (
         <InputContainer>
             <InputWrapper>
-                <InputBase placeholder={placeholder} />
+                <InputBase placeholder={placeholder} onChange={onChange} value={value}/>
                 <div style={{position: 'absolute', top: 0, right: 0,height: '100%', zIndex: 10, display: 'flex', justifyContent: 'center',alignItems: 'center'}}>
-                <Button text="+"/>
+                <Button text="+" onPress={onButtonPress}/>
                 </div>
             </InputWrapper>
         </InputContainer>
