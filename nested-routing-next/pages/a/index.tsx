@@ -6,7 +6,7 @@ const A = () => {
     return (
         <HomeContainer>
             <Menu options={['a1', 'a2']}/>
-            BAKAMITAI
+            Essa é a página A
         </HomeContainer>
     );
 }

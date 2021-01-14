@@ -6,7 +6,7 @@ const A1 = () => {
     return (
         <HomeContainer>
             <Menu options={[]}/>
-            dame yo dame na no yo
+            Essa é a página A1
         </HomeContainer>
     );
 }

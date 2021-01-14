@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { MenuContainer, MenuItem } from './menu.styles';
 import { useRouter } from 'next/router';
 import Link from 'next/link'
@@ -9,17 +9,21 @@ interface MenuProps {
 
 const Menu = ({options}: MenuProps) => {
     const router = useRouter();
-    const { asPath } = router;
+    const { asPath, pathname } = router;
+    const [origin,setOrigin] = useState('');
 
     useEffect(() => {
         console.log('asPath: ', asPath);
+        console.log('hostname: ', window.location.origin);
+        setOrigin(window.location.origin)
     })
     return (
         <MenuContainer>
             {options.map((option, index) => 
                 (
                 <Link href={{
-                    pathname: asPath === '/' ? `http://localhost:3000/${option}` :`http://localhost:3000${asPath}/${option}`
+                    pathname: asPath === '/' ? `${origin}/${option}` :`${origin}${asPath}/${option}`
+                    //pode mudar o localhost pelo basePath em next.config.js
                     }} 
                     key={index}
                     passHref>
