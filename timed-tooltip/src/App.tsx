@@ -15,15 +15,18 @@ function App() {
   const refs = useRef(tooltips);
 
   const removeTooltips = React.useCallback((element: TooltipType) => {
-    if(!element) return;
-    if(tooltips.length === 0) return;
-
-    console.log('tooltips atuais', tooltips)
-
-    const updatedArray = tooltips.filter((tooltip) => lodash.isEqual(element, tooltip))
-
-    refs.current = updatedArray;
-    setTooltips(updatedArray);
+    setTimeout(() => {
+      if(!element) return;
+      if(tooltips.length === 0) return;
+  
+      console.log('tooltips atuais', tooltips)
+  
+      const updatedArray = tooltips.filter((tooltip) => element.props?.parentKey === tooltip.props?.parentKey)
+  
+      console.log(updatedArray, 'array filtrado')
+      refs.current = updatedArray;
+      setTooltips(updatedArray);
+    }, 1000)
 
   }, [tooltips])
 
